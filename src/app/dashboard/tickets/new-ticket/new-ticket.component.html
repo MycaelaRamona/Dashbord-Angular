@@ -1,0 +1,37 @@
+<!--Usando o recurso de Template Variebles -->
+
+<!-- <form (ngSubmit)="onSubmit(titleInput.value, textInput.value, form)" #form>
+  <app-control label="Title"> -->
+    <!-- <label >Title</label> -->
+    <!-- <input name="title" id="title" #titleInput>
+  </app-control>
+  <app-control label="Request"> -->
+    <!-- <label >Request</label> -->
+    <!-- <textarea name="request" id="request" rows="3" #textInput> </textarea>
+  </app-control>
+  <p>
+    <button appButton>
+      Submit
+      <span ngProjectAs="icon">🡪</span>
+    </button>
+  </p>
+</form> -->
+
+<!--Agora usando o recurso do Two way Binding-->
+
+<form (ngSubmit)="onSubmit()" #form>
+  <app-control label="Title">
+    <!-- <label >Title</label> -->
+    <input name="title" id="title" #input [(ngModel)]="enteredTitle">
+  </app-control>
+  <app-control label="Request">
+    <!-- <label >Request</label> -->
+    <textarea name="request" id="request" rows="3" #input [(ngModel)]="enteredText"> </textarea>
+  </app-control>
+  <p>
+    <button appButton>
+      Submit
+      <span ngProjectAs="icon">🡪</span>
+    </button>
+  </p>
+</form>
